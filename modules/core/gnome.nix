@@ -4,6 +4,8 @@
     xkb.layout = "us";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+
+    excludePackages = [ pkgs.xterm ];
     desktopManager.xterm.enable = false;
   };
 

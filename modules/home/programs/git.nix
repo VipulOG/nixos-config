@@ -7,12 +7,18 @@
     rm -f ${config.home.homeDirectory}/.gitconfig
   '';
 
+  home.packages = with pkgs; [ gh ];
+
   programs.git = {
     enable = true;
     lfs.enable = true;
 
     userName = myvars.userfullname;
     userEmail = myvars.useremail;
+
+    signing = {
+      key = "627ADFD16D1C52850639236ACD2BF7E96A36115D";
+    };
 
     extraConfig = {
       init.defaultBranch = "main";

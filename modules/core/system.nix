@@ -31,6 +31,12 @@
   # set user's default shell system-wide
   users.defaultUserShell = pkgs.bashInteractive;
 
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;

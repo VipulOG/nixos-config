@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [  ];
+  home.packages = with pkgs; [ just ];
 
   programs = {
     # A modern replacement for ‘ls’
