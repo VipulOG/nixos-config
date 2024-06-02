@@ -1,7 +1,7 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
 # use nushell for shell commands
-set shell := ["nu", "-c"]
+# set shell := ["nu", "-c"]
 
 
 ############################################################################
@@ -40,13 +40,3 @@ gc:
 gitgc:
   git reflog expire --expire-unreachable=now --all
   git gc --prune=now
-
-
-############################################################################
-#
-#  Misc, other useful commands
-#
-############################################################################
-
-path:
-   $env.PATH | split row ":"
