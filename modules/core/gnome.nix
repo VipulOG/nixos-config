@@ -12,7 +12,6 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-    gnome-console
   ]) ++ (with pkgs.gnome; [
     cheese
     epiphany
