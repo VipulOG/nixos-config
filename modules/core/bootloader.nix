@@ -3,9 +3,9 @@
     kernelPackages = pkgs.linuxPackages_latest;
     # Hide mei logs from tty
     blacklistedKernelModules = [ "mei" "mei_me" ];
+    # Boot animation
+    # plymouth.enable = true;
 
-    plymouth.enable = true;
-    
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
