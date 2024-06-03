@@ -2,9 +2,9 @@
 
   stylix = {
     # autoEnable = false;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    image = mylib.relativeToRoot "./background.png";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/seti.yaml";
     polarity = "dark";
+    image = mylib.relativeToRoot "./wallpaper.jpg";
 
     targets = {
       plymouth.enable = false;
