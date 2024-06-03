@@ -10,7 +10,7 @@ in {
     useUserPackages = true;
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs myvars mylib pkgs-stable pkgs-unstable; };
-    backupFileExtension = "backup26";
+    backupFileExtension = "backup33";
 
     users.${username} = {
       imports = map mylib.relativeToRoot [ "modules/home" ];

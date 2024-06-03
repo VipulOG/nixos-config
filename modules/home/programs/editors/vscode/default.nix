@@ -14,7 +14,6 @@
       eamodio.gitlens
       esbenp.prettier-vscode
       pkief.material-icon-theme
-      mvllow.rose-pine
       ms-azuretools.vscode-docker
       oderwat.indent-rainbow
       bierner.markdown-emoji
@@ -55,14 +54,11 @@
       "git-graph.repository.commits.showSignatureStatus" = true;
 
       # Styling
-      "workbench.colorTheme" = "Rosé Pine";
       "window.autoDetectColorScheme" = true;
-      "workbench.preferredDarkColorTheme" = "Rosé Pine";
-      "workbench.preferredLightColorTheme" = "Rosé Pine Dawn";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.sideBar.location" = "right";
       "workbench.activityBar.location" = "bottom";
-      "window.menuBarVisibility" = "compact";
+      "window.menuBarVisibility" = "hidden";
       "window.titleBarStyle" = "native";
       "window.customTitleBarVisibility" = "auto";
       "scm.showOutgoingChanges" = "never";
