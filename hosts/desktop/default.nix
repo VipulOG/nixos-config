@@ -1,8 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ mylib, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-    ./../../modules/core
-  ];
+  imports = [ ./hardware-configuration.nix ];
+  #----Host specific config ----
 }
