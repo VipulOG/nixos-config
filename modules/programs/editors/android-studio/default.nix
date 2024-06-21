@@ -1,5 +1,5 @@
 { pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = {
-    home.packages = with pkgs; [ android-studio ];
+    home.packages = with pkgs; [ androidStudioPackages.dev ];
   };
 }
