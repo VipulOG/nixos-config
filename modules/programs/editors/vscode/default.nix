@@ -24,6 +24,7 @@
         streetsidesoftware.code-spell-checker
         gruntfuggly.todo-tree
         vscodevim.vim
+        github.codespaces
       ]) ++ (with pkgs.vscode-extensions; [
         # Unstable
         visualstudioexptteam.vscodeintellicode
