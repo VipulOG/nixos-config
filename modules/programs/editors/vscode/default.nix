@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, lib, home-manager, username, ... }: {
+{ pkgs, lib, home-manager, username, ... }: {
   home-manager.users.${username} = {
     programs.vscode = {
       enable = true;
@@ -7,8 +7,8 @@
       mutableExtensionsDir = false;
 
       # Extensions
-      extensions = (with pkgs-stable.vscode-extensions; [
-        # Stable
+      extensions = (with pkgs.vscode-extensions; [
+        # Unstable
         ms-vscode-remote.remote-ssh
         mhutchie.git-graph
         donjayamanne.githistory
@@ -25,11 +25,10 @@
         gruntfuggly.todo-tree
         vscodevim.vim
         github.codespaces
-      ]) ++ (with pkgs.vscode-extensions; [
-        # Unstable
         visualstudioexptteam.vscodeintellicode
         aaron-bond.better-comments
         seatonjiang.gitmoji-vscode
+        ms-vscode-remote.remote-containers
       ]);
 
       # Settings
