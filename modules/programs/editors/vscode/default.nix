@@ -60,7 +60,7 @@
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.sideBar.location" = "right";
         "workbench.activityBar.location" = "bottom";
-        "window.menuBarVisibility" = "hidden";
+        "window.menuBarVisibility" = "compact";
         "window.titleBarStyle" = "native";
         "window.customTitleBarVisibility" = "auto";
         "scm.showOutgoingChanges" = "never";
