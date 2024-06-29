@@ -7,7 +7,6 @@ let
     just-perfection
     clipboard-history
     pop-shell
-    docker
     unblank
     tailscale-qs
     status-area-horizontal-spacing
