@@ -2,6 +2,7 @@
   # ---- Home Configuration ----
   home-manager.users.${username} = {
     stylix = {
+    enable = true;
       targets = {
         vscode.enable = false;
         gtk.extraCss = ''
@@ -15,6 +16,7 @@
 
   # ---- System Configuration ----
   stylix = {
+    enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tomorrow-night.yaml";
     polarity = "dark";
     image = mylib.relativeToRoot "assets/backgrounds/wallpaper.jpg";
