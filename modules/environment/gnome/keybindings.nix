@@ -124,7 +124,11 @@
       toggle-application-view = ["<Super>a"];
       toggle-message-tray = ["<Alt>F3"];
       toggle-overview = [];
-      toggle-quick-settings = ["<Super>s"];
+      toggle-quick-settings = ["<Super><Alt>s"];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver=["<Super><Alt>l"];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
