@@ -5,7 +5,6 @@
 
       userName = "VipulOG";
       userEmail = "90324465+VipulOG@users.noreply.github.com";
-      # signing.key = ;
 
       extraConfig = {
         init.defaultBranch = "main";
@@ -32,17 +31,10 @@
       };
 
       aliases = {
-        # common aliases
-        br = "branch";
-        co = "checkout";
-        st = "status";
         ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
         ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
-        cm = "commit -m"; # commit via `git cm <message>`
-        ca = "commit -am"; # commit all changes via `git ca <message>`
-        dc = "diff --cached";
 
-        amend = "commit --amend -m"; # amend commit message via `git amend <message>`
+        amend = "commit --amend"; # amend commit via `git amend`
         unstage = "reset HEAD --"; # unstage file via `git unstage <file>`
         merged = "branch --merged"; # list merged(into HEAD) branches via `git merged`
         unmerged = "branch --no-merged"; # list unmerged(into HEAD) branches via `git unmerged`
