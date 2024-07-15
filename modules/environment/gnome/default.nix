@@ -21,23 +21,23 @@
 
   environment.systemPackages = with pkgs; [
     mission-center
-    gnome.gnome-tweaks
-    gnome.dconf-editor
+    gnome-tweaks
+    dconf-editor
   ];
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
     gedit
-  ]) ++ (with pkgs.gnome; [
     cheese
     epiphany
-    gnome-contacts
-    gnome-maps
-    gnome-music
     gnome-terminal
     gnome-system-monitor
     simple-scan
     yelp
+  ]) ++ (with pkgs.gnome; [
+    gnome-contacts
+    gnome-maps
+    gnome-music
   ]);
 }
