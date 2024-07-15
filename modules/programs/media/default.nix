@@ -5,5 +5,14 @@
       gimp
       graphviz
     ];
+
+    programs.obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        droidcam-obs
+        obs-pipewire-audio-capture
+      ];
+    };
   };
 }
