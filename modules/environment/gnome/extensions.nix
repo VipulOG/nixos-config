@@ -96,7 +96,7 @@ in
         "org.gnome.Nautilus.desktop"
         "org.gnome.Geary.desktop"
         "brave-browser.desktop"
-        "android-studio.desktop"
+        "android-studio-dev.desktop"
       ];
     };
 
@@ -104,7 +104,7 @@ in
       application-list = [
         "kitty.desktop:1"
         "brave-browser.desktop:2"
-        "android-studio.desktop:3"
+        "android-studio-dev.desktop:3"
         "code.desktop:3"
       ];
     };

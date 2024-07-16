@@ -20,32 +20,26 @@
   outputs = { self, nixpkgs, ... }@inputs:
   let
     lib = nixpkgs.lib;
-    mylib = import ./lib { inherit lib; };
-
-    commonArgs = system: {
-      inherit lib mylib system;
-    } // inputs;
+    mylib = import ./lib { inherit lib inputs; };
+    commonArgs = system: { inherit lib mylib system; } // inputs;
 
   in {
     nixosConfigurations = {
-      desktop =
-        let
-          system = "x86_64-linux";
-        in
-        lib.nixosSystem {
+      desktop = let system = "x86_64-linux"; in
+        mylib.nixosSystem {
+          modules = [
+            ./disko.nix { _module.args.device = "/dev/sdb"; }
+            inputs.stylix.nixosModules.stylix
+            ./modules/virtualization/docker.nix
+            ./modules/virtualization/podman.nix
+          ];
+
           specialArgs = {
             username = "vipul";
             hostName = "desktop";
+            de = "gnome";
+            theme = "tomorrow-night";
           } // commonArgs system;
-          modules = [
-            inputs.disko.nixosModules.disko
-            ./disko.nix { _module.args.device = "/dev/sdb"; }
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
-            ./hosts
-            ./users
-            ./modules
-          ];
         };
     };
   };

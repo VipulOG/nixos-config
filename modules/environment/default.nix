@@ -1,3 +1,3 @@
-{
-  imports = [ ./gnome ];
+{ de, ... }: {
+  imports = [ ./${de} ];
 }

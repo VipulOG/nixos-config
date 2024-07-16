@@ -12,15 +12,9 @@
     desktopManager.gnome.enable = true;
   };
 
-  services.gnome = {
-    evolution-data-server.enable = true;
-    gnome-keyring.enable = true;
-  };
-
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
-    mission-center
     gnome-tweaks
     dconf-editor
   ];
@@ -31,8 +25,6 @@
     gedit
     cheese
     epiphany
-    gnome-terminal
-    gnome-system-monitor
     simple-scan
     yelp
   ]) ++ (with pkgs.gnome; [
