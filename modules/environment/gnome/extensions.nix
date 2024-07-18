@@ -208,6 +208,16 @@ in
       pipeline = "pipeline_default";
     };
 
+    "org/gnome/shell/extensions/blur-my-shell/applications" = {
+      blur=true;
+      blur-on-overview=false;
+      brightness=0.80;
+      dynamic-opacity=false;
+      opacity=220;
+      sigma=24;
+      whitelist=["kitty"];
+    };
+
     "org/gnome/shell/extensions/just-perfection" = {
       activities-button = true;
       alt-tab-small-icon-size = 0;
