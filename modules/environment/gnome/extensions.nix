@@ -1,4 +1,4 @@
-{lib, config, pkgs, ...}:
+{ lib, config, pkgs, ... }:
 
 let
   gnomeExtensionsList = with pkgs.gnomeExtensions; [
@@ -109,68 +109,70 @@ in
       ];
     };
 
-    "org/gnome/shell/extensions/pop-shell" = let
-      hintColor = x: config.lib.stylix.colors."base12-rgb-${x}";
-      toRGBA = color: "rgba(${color "r"}, ${color "g"}, ${color "b"}, 1)";
-    in {
-      tile-by-default = true;
-      active-hint = true;
-      active-hint-border-radius = mkUint32 0; # In pixels (0-30)
-      hint-color-rgba = toRGBA hintColor;
-      gap-inner = 2;
-      gap-outer = 2;
+    "org/gnome/shell/extensions/pop-shell" =
+      let
+        hintColor = x: config.lib.stylix.colors."base12-rgb-${x}";
+        toRGBA = color: "rgba(${color "r"}, ${color "g"}, ${color "b"}, 1)";
+      in
+      {
+        tile-by-default = true;
+        active-hint = true;
+        active-hint-border-radius = mkUint32 0; # In pixels (0-30)
+        hint-color-rgba = toRGBA hintColor;
+        gap-inner = 2;
+        gap-outer = 2;
 
-      fullscreen-launcher = true; # Allow showing launcher above fullscreen windows
-      show-title = false; # Show title bars on windows with server-side decorations
-      show-skip-taskbar = true; # Handle minimized to tray windows
-      mouse-cursor-follows-active-window = true; # Move cursor to active window when navigating with keyboard shortcuts or touchpad gestures
-      mouse-cursor-focus-location = 0; # The location the mouse cursor focuses when selecting a window
-      smart-gaps = false; # Hide the outer gap when a tree contains only one window
-      snap-to-grid = false; # Snaps windows to the tiling grid on drop
-      stacking-with-mouse = true; # Allow for stacking windows as a result of dragging a window with mouse
-      log-level = 0; # Log level: 0 - OFF  1 - ERROR  2 - WARN  3 - INFO  4 - DEBUG
+        fullscreen-launcher = true; # Allow showing launcher above fullscreen windows
+        show-title = false; # Show title bars on windows with server-side decorations
+        show-skip-taskbar = true; # Handle minimized to tray windows
+        mouse-cursor-follows-active-window = true; # Move cursor to active window when navigating with keyboard shortcuts or touchpad gestures
+        mouse-cursor-focus-location = 0; # The location the mouse cursor focuses when selecting a window
+        smart-gaps = false; # Hide the outer gap when a tree contains only one window
+        snap-to-grid = false; # Snaps windows to the tiling grid on drop
+        stacking-with-mouse = true; # Allow for stacking windows as a result of dragging a window with mouse
+        log-level = 0; # Log level: 0 - OFF  1 - ERROR  2 - WARN  3 - INFO  4 - DEBUG
 
-      activate-launcher = ["<Super>space"];
-      toggle-stacking = ["s"]; # Toggle stacking mode inside management mode
-      toggle-stacking-global = ["<Super>s"]; # Toggle stacking mode outside management mode
-      management-orientation = ["o"]; # Toggle tiling orientation inside management mode
-      tile-orientation = ["<Super>o"]; # Toggle tiling orientation outside management mode
-      toggle-floating = ["<Super>g"]; # Toggles a window between floating and tiling
-      toggle-tiling = ["<Super>y"]; # Toggles auto-tiling on and off
+        activate-launcher = [ "<Super>space" ];
+        toggle-stacking = [ "s" ]; # Toggle stacking mode inside management mode
+        toggle-stacking-global = [ "<Super>s" ]; # Toggle stacking mode outside management mode
+        management-orientation = [ "o" ]; # Toggle tiling orientation inside management mode
+        tile-orientation = [ "<Super>o" ]; # Toggle tiling orientation outside management mode
+        toggle-floating = [ "<Super>g" ]; # Toggles a window between floating and tiling
+        toggle-tiling = [ "<Super>y" ]; # Toggles auto-tiling on and off
 
-      tile-enter = ["<Super>Return"]; # Enter tiling management mode
-      tile-accept = ["Return"]; # Accept tiling changes
-      tile-reject = ["Escape"]; # Reject tiling changes
-      tile-move-left = ["Left" "h"]; # Move window left
-      tile-move-down = ["Down" "j"]; # Move window down
-      tile-move-up = ["Up" "k"]; # Move window up
-      tile-move-right = ["Right" "l"]; # Move window right
-      tile-resize-left = ["<Shift>Left" "<Shift>h"]; # Resize window left
-      tile-resize-down = ["<Shift>Down" "<Shift>j"]; # Resize window down
-      tile-resize-up = ["<Shift>Up" "<Shift>k"]; # Resize window up
-      tile-resize-right = ["<Shift>Right" "<Shift>l"]; # Resize window right
-      tile-swap-left = ["<Ctrl>Left" "<Ctrl>h"]; # Swap window left
-      tile-swap-down = ["<Ctrl>Down" "<Ctrl>j"]; # Swap window down
-      tile-swap-up = ["<Ctrl>Up" "<Ctrl>k"]; # Swap window up
-      tile-swap-right = ["<Ctrl>Right" "<Ctrl>l"]; # Swap window right
+        tile-enter = [ "<Super>Return" ]; # Enter tiling management mode
+        tile-accept = [ "Return" ]; # Accept tiling changes
+        tile-reject = [ "Escape" ]; # Reject tiling changes
+        tile-move-left = [ "Left" "h" ]; # Move window left
+        tile-move-down = [ "Down" "j" ]; # Move window down
+        tile-move-up = [ "Up" "k" ]; # Move window up
+        tile-move-right = [ "Right" "l" ]; # Move window right
+        tile-resize-left = [ "<Shift>Left" "<Shift>h" ]; # Resize window left
+        tile-resize-down = [ "<Shift>Down" "<Shift>j" ]; # Resize window down
+        tile-resize-up = [ "<Shift>Up" "<Shift>k" ]; # Resize window up
+        tile-resize-right = [ "<Shift>Right" "<Shift>l" ]; # Resize window right
+        tile-swap-left = [ "<Ctrl>Left" "<Ctrl>h" ]; # Swap window left
+        tile-swap-down = [ "<Ctrl>Down" "<Ctrl>j" ]; # Swap window down
+        tile-swap-up = [ "<Ctrl>Up" "<Ctrl>k" ]; # Swap window up
+        tile-swap-right = [ "<Ctrl>Right" "<Ctrl>l" ]; # Swap window right
 
-      focus-left = ["<Super>Left" "<Super>h"];
-      focus-down = ["<Super>Down" "<Super>j"];
-      focus-up = ["<Super>Up" "<Super>k"];
-      focus-right = ["<Super>Right" "<Super>l"];
+        focus-left = [ "<Super>Left" "<Super>h" ];
+        focus-down = [ "<Super>Down" "<Super>j" ];
+        focus-up = [ "<Super>Up" "<Super>k" ];
+        focus-right = [ "<Super>Right" "<Super>l" ];
 
-      tile-move-left-global = []; # Move window left (global)
-      tile-move-down-global = []; # Move window down (global)
-      tile-move-up-global = []; # Move window up (global)
-      tile-move-right-global = []; # Move window right (global)
+        tile-move-left-global = [ ]; # Move window left (global)
+        tile-move-down-global = [ ]; # Move window down (global)
+        tile-move-up-global = [ ]; # Move window up (global)
+        tile-move-right-global = [ ]; # Move window right (global)
 
-      pop-workspace-down = [];
-      pop-workspace-up = [];
-      pop-monitor-down = [];
-      pop-monitor-up = [];
-      pop-monitor-left = [];
-      pop-monitor-right = [];
-    };
+        pop-workspace-down = [ ];
+        pop-workspace-up = [ ];
+        pop-monitor-down = [ ];
+        pop-monitor-up = [ ];
+        pop-monitor-left = [ ];
+        pop-monitor-right = [ ];
+      };
 
     "org/gnome/shell/extensions/blur-my-shell" = {
       hacks-level = 1;
@@ -193,15 +195,15 @@ in
     };
 
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
-      blur=true;
-      brightness=0.0;
-      force-light-text=false;
-      override-background=true;
-      override-background-dynamically=true;
-      sigma=0;
-      static-blur=false;
-      style-panel=3;
-      unblur-in-overview=true;
+      blur = true;
+      brightness = 0.0;
+      force-light-text = false;
+      override-background = true;
+      override-background-dynamically = true;
+      sigma = 0;
+      static-blur = false;
+      style-panel = 3;
+      unblur-in-overview = true;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
@@ -209,13 +211,13 @@ in
     };
 
     "org/gnome/shell/extensions/blur-my-shell/applications" = {
-      blur=true;
-      blur-on-overview=false;
-      brightness=0.80;
-      dynamic-opacity=false;
-      opacity=220;
-      sigma=24;
-      whitelist=["kitty"];
+      blur = true;
+      blur-on-overview = false;
+      brightness = 0.80;
+      dynamic-opacity = false;
+      opacity = 220;
+      sigma = 24;
+      whitelist = [ "kitty" ];
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
@@ -269,16 +271,16 @@ in
     };
 
     "org/gnome/shell/extensions/vitals" = {
-      alphabetize=false;
-      hide-icons=false;
-      hide-zeros=false;
-      hot-sensors=["_memory_usage_" "_temperature_processor_0_" "_storage_used_"];
-      icon-style=0;
-      menu-centered=true;
-      position-in-panel=1;
-      show-fan=false;
-      show-gpu=false;
-      show-voltage=false;
+      alphabetize = false;
+      hide-icons = false;
+      hide-zeros = false;
+      hot-sensors = [ "_memory_usage_" "_temperature_processor_0_" "_storage_used_" ];
+      icon-style = 0;
+      menu-centered = true;
+      position-in-panel = 1;
+      show-fan = false;
+      show-gpu = false;
+      show-voltage = false;
     };
 
     "org/gnome/shell/extensions/clipboard-history" = {
@@ -292,7 +294,7 @@ in
 
 
     "org/gnome/shell/extensions/status-area-horizontal-spacing" = {
-      hpadding=6;
+      hpadding = 6;
     };
   };
 }

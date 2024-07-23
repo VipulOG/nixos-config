@@ -1,6 +1,6 @@
 { pkgs, username, lib, ... }: {
   # ---- Home Configuration ----
-  home-manager.users.${username} = {config, ...} : {
+  home-manager.users.${username} = { config, ... }: {
     home.packages = [ pkgs.pop-launcher ];
     imports = [ ./keybindings.nix ./extensions.nix ];
   };

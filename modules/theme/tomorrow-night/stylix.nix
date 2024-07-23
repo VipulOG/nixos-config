@@ -2,7 +2,7 @@
   # ---- Home Configuration ----
   home-manager.users.${username} = {
     stylix = {
-    enable = true;
+      enable = true;
       targets = {
         vscode.enable = false;
         gtk.extraCss = ''

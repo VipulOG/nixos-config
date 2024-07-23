@@ -3,7 +3,7 @@
 {
   programs.zsh.enable = true;
 
-  home-manager.users.${username} = {config, ...}: {
+  home-manager.users.${username} = { config, ... }: {
     programs.zsh = {
       enable = true;
       enableCompletion = true;

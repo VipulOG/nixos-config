@@ -2,7 +2,8 @@
   imports = [
     ./hardware-configuration.nix
   ] ++ mylib.importConfiguredPrograms [
-    "kitty" "vscode"
+    "kitty"
+    "vscode"
   ];
 
   #----Host specific config ----
